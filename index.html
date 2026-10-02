@@ -1,1 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Allen Mothibedi | Shopify Portfolio</title>
+
+  <meta name="description"
+        content="Allen Mothibedi - Shopify portfolio showcasing e-commerce design, store development and digital solutions.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080b12;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8, 11, 18, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #95e63d;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d8dce5;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #95e63d;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 130px 25px 80px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(149,230,61,0.13), transparent 35%),
+        radial-gradient(circle at 10% 80%, rgba(0,130,255,0.10), transparent 30%),
+        #080b12;
+    }
+
+    .hero-container {
+      max-width: 1150px;
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(149,230,61,0.35);
+      border-radius: 50px;
+      color: #95e63d;
+      font-size: 13px;
+      margin-bottom: 22px;
+      background: rgba(149,230,61,0.06);
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #95e63d;
+    }
+
+    .hero p {
+      color: #aeb5c3;
+      max-width: 650px;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 9px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #95e63d;
+      color: #071006;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(149,230,61,0.25);
+    }
+
+    .btn-outline {
+      border: 1px solid #39404d;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: #95e63d;
+      color: #95e63d;
+    }
+
+    .hero-card {
+      position: relative;
+      background: linear-gradient(145deg, #151b26, #0d1119);
+      border: 1px solid #29313e;
+      border-radius: 25px;
+      padding: 35px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    }
+
+    .shopify-icon {
+      width: 85px;
+      height: 85px;
+      border-radius: 20px;
+      background: #95e63d;
+      color: #071006;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    .hero-card h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .hero-card p {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      background: #0a0e15;
+      border: 1px solid #252c37;
+      padding: 16px;
+      border-radius: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      color: #95e63d;
+    }
+
+    .stat small {
+      color: #8d96a5;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 100px 25px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: #95e63d;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 50px);
+      letter-spacing: -2px;
+      margin-bottom: 15px;
+    }
+
+    .section-description {
+      color: #929aa8;
+      max-width: 650px;
+      margin-bottom: 45px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #0d1119;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: #aeb5c3;
+      margin-bottom: 18px;
+    }
+
+    .about-box {
+      background: #111721;
+      border: 1px solid #252d39;
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .about-box h3 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .check {
+      display: flex;
+      gap: 12px;
+      margin: 15px 0;
+      color: #c6ccd6;
+    }
+
+    .check span {
+      color: #95e63d;
+      font-weight: bold;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      background: #10151e;
+      border: 1px solid #252d39;
+      border-radius: 18px;
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-7px);
+      border-color: #95e63d;
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: rgba(149,230,61,0.10);
+      color: #95e63d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .service p {
+      color: #929aa8;
+      font-size: 14px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio {
+      background: #0d1119;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project {
+      min-height: 280px;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid #28313e;
+      background:
+        linear-gradient(135deg, rgba(149,230,61,0.08), transparent),
+        #111721;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: #95e63d;
+    }
+
+    .project-number {
+      color: #95e63d;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: auto;
+    }
+
+    .project h3 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      color: #969eac;
+      font-size: 14px;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .skill {
+      padding: 20px;
+      border: 1px solid #252d39;
+      background: #10151e;
+      border-radius: 12px;
+      text-align: center;
+      color: #cfd4dd;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(149,230,61,0.10), transparent 35%),
+        #080b12;
+      text-align: center;
+    }
+
+    .contact .section-description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-card {
+      max-width: 750px;
+      margin: 30px auto 0;
+      padding: 40px;
+      border: 1px solid #29313d;
+      background: #10151e;
+      border-radius: 20px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #202631;
+      padding: 30px 25px;
+      text-align: center;
+      color: #737c8b;
+      background: #070a10;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #0b0f16;
+        padding: 25px;
+        flex-direction: column;
+        border-bottom: 1px solid #252d39;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-container,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-card {
+        max-width: 550px;
+        margin: auto;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-card {
+        padding: 25px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="nav-container">
+
+      <a href="#home" class="logo">
+        Allen<span>.</span>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-container">
+
+      <div>
+
+        <div class="badge">
+          Shopify & E-Commerce Portfolio
+        </div>
+
+        <h1>
+          Building <span>better</span><br>
+          online stores.
+        </h1>
+
+        <p>
+          Hi, I'm Allen Mothibedi. I create modern, professional
+          and user-friendly e-commerce experiences designed to
+          help businesses build their presence online.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#portfolio" class="btn btn-primary">
+            View My Work
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Let's Work Together
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-card">
+
+        <div class="shopify-icon">
+          S
+        </div>
+
+        <h3>
+          Shopify Portfolio
+        </h3>
+
+        <p>
+          Exploring e-commerce design, Shopify store development,
+          responsive websites and digital solutions.
+        </p>
+
+        <div class="stats">
+
+          <div class="stat">
+            <strong>01</strong>
+            <small>Portfolio</small>
+          </div>
+
+          <div class="stat">
+            <strong>24/7</strong>
+            <small>Online Presence</small>
+          </div>
+
+          <div class="stat">
+            <strong>100%</strong>
+            <small>Responsive</small>
+          </div>
+
+          <div class="stat">
+            <strong>∞</strong>
+            <small>Ideas</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <div class="section-label">
+            About Me
+          </div>
+
+          <h2 class="section-title">
+            Turning ideas into digital experiences.
+          </h2>
+
+          <p>
+            I'm Allen Mothibedi, a creative professional interested
+            in Shopify, e-commerce and modern web experiences.
+          </p>
+
+          <p>
+            My goal is to help businesses and entrepreneurs create
+            websites that look professional, work smoothly and give
+            customers a simple experience.
+          </p>
+
+          <p>
+            This portfolio showcases my work, skills and approach
+            to building digital experiences.
+          </p>
+
+        </div>
+
+
+        <div class="about-box">
+
+          <h3>
+            What I Focus On
+          </h3>
+
+          <div class="check">
+            <span>✓</span>
+            <div>Clean and modern website design</div>
+          </div>
+
+          <div class="check">
+            <span>✓</span>
+            <div>Mobile-friendly experiences</div>
+          </div>
+
+          <div class="check">
+            <span>✓</span>
+            <div>E-commerce store presentation</div>
+          </div>
+
+          <div class="check">
+            <span>✓</span>
+            <div>User-friendly navigation</div>
+          </div>
+
+          <div class="check">
+            <span>✓</span>
+            <div>Professional online branding</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-label">
+        Services
+      </div>
+
+      <h2 class="section-title">
+        What I Can Help With
+      </h2>
+
+      <p class="section-description">
+        Digital services focused on creating professional,
+        simple and effective online experiences.
+      </p>
+
+
+      <div class="services-grid">
+
+        <div class="service">
+
+          <div class="service-icon">
+            🛍️
+          </div>
+
+          <h3>
+            Shopify Stores
+          </h3>
+
+          <p>
+            Professional Shopify store layouts designed to
+            present products clearly and create a smooth
+            customer journey.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-icon">
+            🎨
+          </div>
+
+          <h3>
+            Web Design
+          </h3>
+
+          <p>
+            Modern website layouts with a clean visual style,
+            responsive design and easy navigation.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-icon">
+            📱
+          </div>
+
+          <h3>
+            Mobile Design
+          </h3>
+
+          <p>
+            Websites designed to work beautifully across
+            phones, tablets and desktop screens.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-icon">
+            🚀
+          </div>
+
+          <h3>
+            Store Optimization
+          </h3>
+
+          <p>
+            Improving the presentation, structure and
+            usability of an online store.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-icon">
+            💡
+          </div>
+
+          <h3>
+            Creative Solutions
+          </h3>
+
+          <p>
+            Fresh digital ideas for entrepreneurs and
+            businesses looking to grow online.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-icon">
+            🤝
+          </div>
+
+          <h3>
+            Client Support
+          </h3>
+
+          <p>
+            Clear communication and practical solutions
+            throughout a digital project.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PORTFOLIO -->
+
+  <section class="portfolio" id="portfolio">
+
+    <div class="container">
+
+      <div class="section-label">
+        Portfolio
+      </div>
+
+      <h2 class="section-title">
+        Selected Projects
+      </h2>
+
+      <p class="section-description">
+        A selection of digital projects and concepts.
+        More projects can be added here as your portfolio grows.
+      </p>
+
+
+      <div class="portfolio-grid">
+
+        <div class="project">
+
+          <div class="project-number">
+            PROJECT 01
+          </div>
+
+          <h3>
+            Shopify Store Concept
+          </h3>
+
+          <p>
+            Modern e-commerce concept focused on product
+            presentation and simple customer navigation.
+          </p>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">
+            PROJECT 02
+          </div>
+
+          <h3>
+            E-Commerce Landing Page
+          </h3>
+
+          <p>
+            A clean landing page designed to introduce a
+            brand and guide visitors toward products.
+          </p>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">
+            PROJECT 03
+          </div>
+
+          <h3>
+            Personal Portfolio
+          </h3>
+
+          <p>
+            A responsive personal portfolio designed to
+            showcase skills, services and digital work.
+          </p>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">
+            PROJECT 04
+          </div>
+
+          <h3>
+            Brand Website Concept
+          </h3>
+
+          <p>
+            A professional web concept created around
+            strong branding and a clear user experience.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <div class="section-label">
+        Skills
+      </div>
+
+      <h2 class="section-title">
+        My Digital Toolkit
+      </h2>
+
+      <p class="section-description">
+        Technologies and areas I work with while building
+        modern digital experiences.
+      </p>
+
+
+      <div class="skills-grid">
+
+        <div class="skill">Shopify</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Responsive Design</div>
+        <div class="skill">E-Commerce</div>
+        <div class="skill">Web Design</div>
+        <div class="skill">UI Design</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="section-label">
+        Contact
+      </div>
+
+      <h2 class="section-title">
+        Have a project in mind?
+      </h2>
+
+      <p class="section-description">
+        Let's discuss your idea and explore how we can
+        turn it into a professional online experience.
+      </p>
+
+
+      <div class="contact-card">
+
+        <h3>
+          Allen Mothibedi
+        </h3>
+
+        <p style="color:#929aa8; margin-top:8px;">
+          Shopify & E-Commerce Portfolio
+        </p>
+
+        <div class="contact-links">
+
+          <!-- Replace the email address below with your real email -->
+
+          <a
+            href="mailto:YOUR-EMAIL@example.com"
+            class="btn btn-primary">
+            Email Me
+          </a>
+
+          <!-- Replace the WhatsApp number with your number -->
+
+          <a
+            href="https://wa.me/YOURNUMBER"
+            class="btn btn-outline">
+            WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Allen Mothibedi. All rights reserved.
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const menu = document.getElementById("navLinks");
+
+      menu.classList.toggle("active");
+
+    }
+
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        document
+          .getElementById("navLinks")
+          .classList.remove("active");
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
