@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +33,9 @@
       color: inherit;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     nav {
       position: fixed;
@@ -89,7 +92,9 @@
       cursor: pointer;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 100vh;
@@ -231,7 +236,9 @@
       color: #8d96a5;
     }
 
-    /* GENERAL */
+    /* =========================
+       GENERAL
+    ========================= */
 
     section {
       padding: 100px 25px;
@@ -263,7 +270,9 @@
       margin-bottom: 45px;
     }
 
-    /* ABOUT */
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about {
       background: #0d1119;
@@ -305,7 +314,9 @@
       font-weight: bold;
     }
 
-    /* SERVICES */
+    /* =========================
+       SERVICES
+    ========================= */
 
     .services-grid {
       display: grid;
@@ -349,7 +360,9 @@
       font-size: 14px;
     }
 
-    /* PORTFOLIO */
+    /* =========================
+       PORTFOLIO
+    ========================= */
 
     .portfolio {
       background: #0d1119;
@@ -362,7 +375,7 @@
     }
 
     .project {
-      min-height: 280px;
+      min-height: 500px;
       padding: 30px;
       border-radius: 20px;
       border: 1px solid #28313e;
@@ -371,7 +384,6 @@
         #111721;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
       transition: 0.3s;
     }
 
@@ -380,11 +392,35 @@
       border-color: #95e63d;
     }
 
+    /* PROJECT IMAGE */
+
+    .project-image {
+      width: 100%;
+      height: 280px;
+      margin-bottom: 25px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0a0e15;
+      border: 1px solid #252d39;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: 0.3s ease;
+    }
+
+    .project:hover .project-image img {
+      transform: scale(1.03);
+    }
+
     .project-number {
       color: #95e63d;
       font-size: 13px;
       font-weight: bold;
-      margin-bottom: auto;
+      margin-bottom: 8px;
     }
 
     .project h3 {
@@ -397,7 +433,9 @@
       font-size: 14px;
     }
 
-    /* SKILLS */
+    /* =========================
+       SKILLS
+    ========================= */
 
     .skills-grid {
       display: grid;
@@ -414,7 +452,9 @@
       color: #cfd4dd;
     }
 
-    /* CONTACT */
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact {
       background:
@@ -445,7 +485,9 @@
       margin-top: 25px;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       border-top: 1px solid #202631;
@@ -456,7 +498,9 @@
       font-size: 13px;
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 850px) {
 
@@ -501,6 +545,10 @@
         max-width: 550px;
         margin: auto;
       }
+
+      .project {
+        min-height: auto;
+      }
     }
 
     @media (max-width: 500px) {
@@ -516,13 +564,19 @@
       .contact-card {
         padding: 25px 18px;
       }
+
+      .project-image {
+        height: 220px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
   <nav>
     <div class="nav-container">
@@ -531,7 +585,9 @@
         Allen<span>.</span>
       </a>
 
-      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+        ☰
+      </button>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
@@ -546,7 +602,9 @@
   </nav>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <section class="hero" id="home">
 
@@ -602,8 +660,8 @@
         <div class="stats">
 
           <div class="stat">
-            <strong>01</strong>
-            <small>Portfolio</small>
+            <strong>04</strong>
+            <small>Projects</small>
           </div>
 
           <div class="stat">
@@ -630,7 +688,9 @@
   </section>
 
 
-  <!-- ABOUT -->
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
   <section class="about" id="about">
 
@@ -707,7 +767,9 @@
   </section>
 
 
-  <!-- SERVICES -->
+  <!-- =========================
+       SERVICES
+  ========================= -->
 
   <section id="services">
 
@@ -844,7 +906,9 @@
   </section>
 
 
-  <!-- PORTFOLIO -->
+  <!-- =========================
+       PORTFOLIO
+  ========================= -->
 
   <section class="portfolio" id="portfolio">
 
@@ -865,63 +929,126 @@
 
 
       <div class="portfolio-grid">
-<div class="project">
-  <div class="project-image">
-    <img src="glowbeauty.png" alt="Glow Beauty Shopify Store">
-  </div>
-
-  <div class="project-number">PROJECT 01</div>
-  <h3>Glow Beauty Shopify Store</h3>
-  <p>
-    Modern beauty e-commerce concept focused on clean product
-    presentation and an easy shopping experience.
-  </p>
-</div>
-
-<div class="project">
-  <div class="project-image">
-    <img src="homenest.png" alt="HomeNest Shopify Store">
-  </div>
-
-  <div class="project-number">PROJECT 02</div>
-  <h3>HomeNest Shopify Store</h3>
-  <p>
-    Elegant home and lifestyle e-commerce concept designed
-    for simple browsing and smooth customer navigation.
-  </p>
-</div>
-
-<div class="project">
-  <div class="project-image">
-    <img src="techhive.png" alt="TechHive Shopify Store">
-  </div>
-
-  <div class="project-number">PROJECT 03</div>
-  <h3>TechHive Shopify Store</h3>
-  <p>
-    Modern technology store concept featuring clear product
-    presentation and a streamlined shopping experience.
-  </p>
-</div>
-
-<div class="project">
-  <div class="project-image">
-    <img src="urbanwear.png" alt="UrbanWear Shopify Store">
-  </div>
-
-  <div class="project-number">PROJECT 04</div>
-  <h3>UrbanWear Shopify Store</h3>
-  <p>
-    Contemporary fashion e-commerce concept built around
-    strong visuals and straightforward customer navigation.
-  </p>
-</div>
- 
 
 
+        <!-- PROJECT 01 -->
+
+        <div class="project">
+
+          <div class="project-image">
+            <img
+              src="glowbeauty.png"
+              alt="Glow Beauty Shopify Store"
+            >
+          </div>
+
+          <div class="project-number">
+            PROJECT 01
+          </div>
+
+          <h3>
+            Glow Beauty Shopify Store
+          </h3>
+
+          <p>
+            Modern beauty e-commerce concept focused on clean
+            product presentation and an easy shopping experience.
+          </p>
+
+        </div>
 
 
-  <!-- SKILLS -->
+        <!-- PROJECT 02 -->
+
+        <div class="project">
+
+          <div class="project-image">
+            <img
+              src="homenest.png"
+              alt="HomeNest Shopify Store"
+            >
+          </div>
+
+          <div class="project-number">
+            PROJECT 02
+          </div>
+
+          <h3>
+            HomeNest Shopify Store
+          </h3>
+
+          <p>
+            Elegant home and lifestyle e-commerce concept designed
+            for simple browsing and smooth customer navigation.
+          </p>
+
+        </div>
+
+
+        <!-- PROJECT 03 -->
+
+        <div class="project">
+
+          <div class="project-image">
+            <img
+              src="techhive.png"
+              alt="TechHive Shopify Store"
+            >
+          </div>
+
+          <div class="project-number">
+            PROJECT 03
+          </div>
+
+          <h3>
+            TechHive Shopify Store
+          </h3>
+
+          <p>
+            Modern technology store concept featuring clear product
+            presentation and a streamlined shopping experience.
+          </p>
+
+        </div>
+
+
+        <!-- PROJECT 04 -->
+
+        <div class="project">
+
+          <div class="project-image">
+            <img
+              src="urbanwear.png"
+              alt="UrbanWear Shopify Store"
+            >
+          </div>
+
+          <div class="project-number">
+            PROJECT 04
+          </div>
+
+          <h3>
+            UrbanWear Shopify Store
+          </h3>
+
+          <p>
+            Contemporary fashion e-commerce concept built around
+            strong visuals and straightforward customer navigation.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SKILLS
+  ========================= -->
 
   <section id="skills">
 
@@ -959,7 +1086,9 @@
   </section>
 
 
-  <!-- CONTACT -->
+  <!-- =========================
+       CONTACT
+  ========================= -->
 
   <section class="contact" id="contact">
 
@@ -991,19 +1120,21 @@
 
         <div class="contact-links">
 
-          <!-- Replace the email address below with your real email -->
+          <!-- Replace with your actual email address -->
 
           <a
-            href="mailto:YOUR-EMAIL@allenmothibedi46@gmail.com"
+            href="mailto:YOUR-EMAIL@example.com"
             class="btn btn-primary">
             Email Me
           </a>
 
-          <!-- Replace the WhatsApp number with your number -->
+
+          <!-- WhatsApp -->
 
           <a
-            href="https://wa.me/+26776473286"
-            class="btn btn-outline">
+            href="https://wa.me/26776473286"
+            class="btn btn-outline"
+            target="_blank">
             WhatsApp
           </a>
 
@@ -1016,7 +1147,9 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
@@ -1025,7 +1158,9 @@
   </footer>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
 
   <script>
 
@@ -1054,3 +1189,5 @@
 
 </body>
 </html>
+```
+
