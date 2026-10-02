@@ -4,14 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Allen Mothibedi | Shopify & Web Design Portfolio</title>
+  <title>Allen Mothibedi | Web Designer & Shopify Specialist</title>
 
   <meta
     name="description"
-    content="Allen Mothibedi - Shopify, e-commerce and web design portfolio showcasing modern digital experiences and online store concepts."
+    content="Allen Mothibedi — Professional web designer and Shopify specialist creating modern, responsive and user-friendly digital experiences."
   >
 
   <style>
+    /* =====================================================
+       RESET
+    ===================================================== */
+
     * {
       margin: 0;
       padding: 0;
@@ -23,1478 +27,1849 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #080b12;
-      color: #ffffff;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      background: #080a0f;
+      color: #f5f7fa;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     img {
-      max-width: 100%;
       display: block;
+      width: 100%;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
+    button {
+      font: inherit;
+    }
 
-    nav {
+    ::selection {
+      background: #b7ff4a;
+      color: #080a0f;
+    }
+
+
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
+
+    :root {
+      --bg: #080a0f;
+      --bg-soft: #0d1017;
+      --card: #11151e;
+      --card-light: #151a24;
+      --text: #f5f7fa;
+      --muted: #929aa8;
+      --line: rgba(255,255,255,0.09);
+      --accent: #b7ff4a;
+      --accent-dark: #8fdc28;
+      --white: #ffffff;
+      --max: 1180px;
+      --radius: 22px;
+    }
+
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      max-width: 750px;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -2.5px;
+      margin-bottom: 22px;
+    }
+
+    .section-description {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(8, 11, 18, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(8, 10, 15, 0.78);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .nav-container {
-      max-width: 1150px;
-      margin: auto;
-      padding: 18px 25px;
+    nav {
+      min-height: 78px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-      font-size: 22px;
-      font-weight: 800;
+      font-size: 26px;
+      font-weight: 900;
       letter-spacing: -1px;
     }
 
     .logo span {
-      color: #95e63d;
+      color: var(--accent);
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      align-items: center;
+      gap: 32px;
       list-style: none;
     }
 
     .nav-links a {
-      color: #d8dce5;
+      color: #c9ced6;
       font-size: 14px;
-      transition: 0.3s;
+      font-weight: 600;
+      transition: 0.25s ease;
     }
 
     .nav-links a:hover {
-      color: #95e63d;
+      color: var(--accent);
     }
 
-    .menu-btn {
+    .nav-cta {
+      padding: 11px 18px;
+      border: 1px solid rgba(183,255,74,0.35);
+      border-radius: 999px;
+      color: var(--accent) !important;
+    }
+
+    .menu-button {
       display: none;
-      background: none;
-      border: none;
+      border: 0;
+      background: transparent;
       color: white;
       font-size: 28px;
       cursor: pointer;
     }
 
-    /* =========================
+
+    /* =====================================================
        HERO
-    ========================= */
+    ===================================================== */
 
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 130px 25px 80px;
-
-      background:
-        radial-gradient(
-          circle at 80% 20%,
-          rgba(149,230,61,0.13),
-          transparent 35%
-        ),
-        radial-gradient(
-          circle at 10% 80%,
-          rgba(0,130,255,0.10),
-          transparent 30%
-        ),
-        #080b12;
+      padding-top: 120px;
+      overflow: hidden;
     }
 
-    .hero-container {
-      max-width: 1150px;
-      width: 100%;
-      margin: auto;
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: rgba(183,255,74,0.06);
+      border-radius: 50%;
+      filter: blur(100px);
+      right: -250px;
+      top: 100px;
+      pointer-events: none;
+    }
 
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 70px;
       align-items: center;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 8px 14px;
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.025);
+      border-radius: 999px;
+      padding: 9px 15px;
+      color: #cbd1da;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 26px;
+    }
 
-      border: 1px solid rgba(149,230,61,0.35);
-      border-radius: 50px;
-
-      color: #95e63d;
-      font-size: 13px;
-
-      margin-bottom: 22px;
-
-      background: rgba(149,230,61,0.06);
+    .availability-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(183,255,74,0.8);
     }
 
     .hero h1 {
-      font-size: clamp(45px, 7vw, 78px);
-      line-height: 0.98;
-      letter-spacing: -4px;
-      margin-bottom: 25px;
+      font-size: clamp(52px, 7vw, 92px);
+      line-height: 0.96;
+      letter-spacing: -5px;
+      max-width: 850px;
+      margin-bottom: 28px;
     }
 
     .hero h1 span {
-      color: #95e63d;
+      color: var(--accent);
     }
 
-    .hero p {
-      color: #aeb5c3;
+    .hero-text {
+      color: var(--muted);
       max-width: 650px;
       font-size: 18px;
-      margin-bottom: 35px;
+      margin-bottom: 36px;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
-      gap: 15px;
       flex-wrap: wrap;
+      gap: 14px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 9px;
-      font-weight: 700;
-      transition: 0.3s;
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.3s ease;
+      border: 1px solid transparent;
     }
 
-    .btn-primary {
-      background: #95e63d;
-      color: #071006;
+    .button-primary {
+      background: var(--accent);
+      color: #080a0f;
     }
 
-    .btn-primary:hover {
+    .button-primary:hover {
+      background: var(--accent-dark);
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(149,230,61,0.25);
     }
 
-    .btn-outline {
-      border: 1px solid #39404d;
+    .button-secondary {
+      border-color: var(--line);
+      background: rgba(255,255,255,0.025);
       color: white;
     }
 
-    .btn-outline:hover {
-      border-color: #95e63d;
-      color: #95e63d;
+    .button-secondary:hover {
+      border-color: rgba(183,255,74,0.4);
+      color: var(--accent);
+      transform: translateY(-3px);
     }
 
-    /* =========================
+
+    /* =====================================================
        HERO CARD
-    ========================= */
+    ===================================================== */
 
     .hero-card {
       position: relative;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.07),
+          rgba(255,255,255,0.015)
+        );
 
-      background: linear-gradient(
-        145deg,
-        #151b26,
-        #0d1119
-      );
-
-      border: 1px solid #29313e;
-      border-radius: 25px;
-
-      padding: 35px;
-
-      box-shadow:
-        0 30px 80px rgba(0,0,0,0.35);
-    }
-
-    .shopify-icon {
-      width: 85px;
-      height: 85px;
-
-      border-radius: 20px;
-
-      background: #95e63d;
-      color: #071006;
-
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 28px;
+      min-height: 440px;
       display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+    }
+
+    .hero-card-top {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-
-      font-size: 42px;
-      font-weight: 900;
-
-      margin-bottom: 25px;
     }
 
-    .hero-card h3 {
-      font-size: 25px;
-      margin-bottom: 10px;
+    .mini-label {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 800;
     }
 
-    .hero-card p {
-      font-size: 15px;
+    .card-number {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .hero-card-main {
+      padding: 45px 0;
+    }
+
+    .hero-card-main h2 {
+      font-size: 46px;
+      line-height: 1;
+      letter-spacing: -2px;
       margin-bottom: 20px;
     }
 
-    .stats {
+    .hero-card-main p {
+      color: var(--muted);
+      max-width: 380px;
+    }
+
+    .hero-stats {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 10px;
     }
 
     .stat {
-      background: #0a0e15;
-      border: 1px solid #252c37;
-
-      padding: 16px;
-      border-radius: 12px;
+      padding: 18px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--line);
+      border-radius: 17px;
     }
 
     .stat strong {
       display: block;
-      font-size: 22px;
-      color: #95e63d;
+      font-size: 23px;
+      color: white;
+      margin-bottom: 3px;
     }
 
-    .stat small {
-      color: #8d96a5;
-    }
-
-    /* =========================
-       GENERAL
-    ========================= */
-
-    section {
-      padding: 100px 25px;
-    }
-
-    .container {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .section-label {
-      color: #95e63d;
+    .stat span {
+      color: var(--muted);
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
-    .section-title {
-      font-size: clamp(32px, 5vw, 50px);
-      letter-spacing: -2px;
-      margin-bottom: 15px;
-    }
 
-    .section-description {
-      color: #929aa8;
-      max-width: 650px;
-      margin-bottom: 45px;
-    }
-
-    /* =========================
+    /* =====================================================
        ABOUT
-    ========================= */
+    ===================================================== */
 
     .about {
-      background: #0d1119;
+      background: #0b0e14;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 60px;
-      align-items: center;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
     }
 
-    .about-text p {
-      color: #aeb5c3;
-      margin-bottom: 18px;
-    }
-
-    .about-box {
-      background: #111721;
-      border: 1px solid #252d39;
-
-      border-radius: 20px;
-      padding: 35px;
-    }
-
-    .about-box h3 {
+    .about-content p {
+      color: var(--muted);
+      font-size: 17px;
       margin-bottom: 20px;
-      font-size: 24px;
     }
 
-    .check {
-      display: flex;
-      gap: 12px;
-
-      margin: 15px 0;
-
-      color: #c6ccd6;
+    .about-highlight {
+      margin-top: 30px;
+      padding: 24px;
+      border-left: 2px solid var(--accent);
+      background: rgba(183,255,74,0.035);
+      border-radius: 0 16px 16px 0;
+      color: #dfe4eb;
+      font-size: 18px;
     }
 
-    .check span {
-      color: #95e63d;
-      font-weight: bold;
-    }
 
-    /* =========================
+    /* =====================================================
        SERVICES
-    ========================= */
+    ===================================================== */
 
     .services-grid {
+      margin-top: 55px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 18px;
     }
 
-    .service {
-      background: #10151e;
-      border: 1px solid #252d39;
-
-      border-radius: 18px;
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       padding: 30px;
-
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
 
-    .service:hover {
+    .service-card:hover {
       transform: translateY(-7px);
-      border-color: #95e63d;
+      border-color: rgba(183,255,74,0.28);
+      background: var(--card-light);
     }
 
-    .service-icon {
-      width: 52px;
-      height: 52px;
-
-      border-radius: 12px;
-
-      background: rgba(149,230,61,0.10);
-      color: #95e63d;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 23px;
-
-      margin-bottom: 20px;
+    .service-number {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 35px;
     }
 
-    .service h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
     }
 
-    .service p {
-      color: #929aa8;
+    .service-card p {
+      color: var(--muted);
       font-size: 14px;
     }
 
-    /* =========================
-       PORTFOLIO
-    ========================= */
 
-    .portfolio {
-      background: #0d1119;
+    /* =====================================================
+       PROJECTS
+    ===================================================== */
+
+    .projects {
+      background: #0b0e14;
     }
 
-    .portfolio-grid {
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 55px;
+    }
+
+    .projects-count {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      gap: 24px;
     }
 
-    .project {
-      min-height: 570px;
-
-      padding: 30px;
-
-      border-radius: 20px;
-      border: 1px solid #28313e;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(149,230,61,0.08),
-          transparent
-        ),
-        #111721;
-
-      display: flex;
-      flex-direction: column;
-
-      transition: 0.3s;
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      overflow: hidden;
+      transition: 0.35s ease;
     }
 
-    .project:hover {
-      transform: translateY(-5px);
-      border-color: #95e63d;
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(183,255,74,0.3);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.25);
     }
-
-    /* =========================
-       PROJECT IMAGE
-    ========================= */
 
     .project-image {
-      width: 100%;
-      height: 280px;
-
-      margin-bottom: 25px;
-
-      border-radius: 14px;
+      position: relative;
+      height: 330px;
       overflow: hidden;
-
-      background: #0a0e15;
-
-      border: 1px solid #252d39;
+      background: #161a22;
     }
 
     .project-image img {
       width: 100%;
       height: 100%;
-
       object-fit: cover;
-
-      display: block;
-
-      transition: 0.3s ease;
+      transition: transform 0.5s ease;
     }
 
-    .project:hover .project-image img {
-      transform: scale(1.03);
+    .project-card:hover .project-image img {
+      transform: scale(1.045);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.55),
+        transparent 55%
+      );
+      pointer-events: none;
+    }
+
+    .project-tag {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 7px 11px;
+      background: rgba(8,10,15,0.78);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      color: white;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+
+    .project-content {
+      padding: 27px;
     }
 
     .project-number {
-      color: #95e63d;
-      font-size: 13px;
-      font-weight: bold;
-
-      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
     }
 
-    .project h3 {
-      font-size: 25px;
-      margin-bottom: 8px;
+    .project-content h3 {
+      font-size: 28px;
+      letter-spacing: -0.8px;
+      margin-bottom: 9px;
     }
 
-    .project p {
-      color: #969eac;
+    .project-content p {
+      color: var(--muted);
       font-size: 14px;
-
       margin-bottom: 22px;
     }
 
-    /* PROJECT BUTTON */
-
     .project-button {
-      display: inline-block;
-
-      align-self: flex-start;
-
-      padding: 11px 18px;
-
-      border: 1px solid #39404d;
-      border-radius: 8px;
-
-      color: #ffffff;
-
-      font-size: 14px;
-      font-weight: 700;
-
-      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      transition: 0.25s ease;
     }
 
     .project-button:hover {
-      background: #95e63d;
-      border-color: #95e63d;
-      color: #071006;
-
-      transform: translateY(-2px);
+      gap: 13px;
     }
 
-    /* =========================
+
+    /* =====================================================
        SKILLS
-    ========================= */
+    ===================================================== */
 
     .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .skill {
-      padding: 20px;
-
-      border: 1px solid #252d39;
-      background: #10151e;
-
-      border-radius: 12px;
-
-      text-align: center;
-
-      color: #cfd4dd;
-
-      transition: 0.3s;
+      padding: 14px 19px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.025);
+      color: #dce1e8;
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.25s ease;
     }
 
     .skill:hover {
-      border-color: #95e63d;
-      color: #95e63d;
-      transform: translateY(-3px);
+      border-color: rgba(183,255,74,0.35);
+      color: var(--accent);
+      transform: translateY(-2px);
     }
 
-    /* =========================
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta {
+      padding-top: 50px;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      padding: 70px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(183,255,74,0.12),
+          rgba(255,255,255,0.025)
+        );
+
+      border: 1px solid rgba(183,255,74,0.18);
+    }
+
+    .cta-box::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(183,255,74,0.08);
+      filter: blur(70px);
+      right: -100px;
+      bottom: -150px;
+    }
+
+    .cta-box h2 {
+      position: relative;
+      z-index: 1;
+      max-width: 750px;
+      font-size: clamp(38px, 5vw, 65px);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .cta-box p {
+      position: relative;
+      z-index: 1;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+
+    .cta-box .button {
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* =====================================================
        CONTACT
-    ========================= */
+    ===================================================== */
 
     .contact {
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          rgba(149,230,61,0.10),
-          transparent 35%
-        ),
-        #080b12;
-
-      text-align: center;
+      background: #0b0e14;
     }
 
-    .contact .section-description {
-      margin-left: auto;
-      margin-right: auto;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 80px;
+      align-items: start;
     }
 
-    .contact-card {
-      max-width: 750px;
-
-      margin: 30px auto 0;
-
-      padding: 40px;
-
-      border: 1px solid #29313d;
-
-      background: #10151e;
-
-      border-radius: 20px;
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 30px;
+      max-width: 500px;
     }
 
-    .contact-card h3 {
-      font-size: 28px;
-      margin-bottom: 5px;
+    .contact-details {
+      display: grid;
+      gap: 13px;
     }
 
-    .contact-email {
-      color: #95e63d;
-      margin-top: 10px;
-      display: inline-block;
-      word-break: break-word;
+    .contact-item {
+      padding: 19px 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+      border-radius: 16px;
     }
 
-    .contact-links {
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 4px;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .contact-actions {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-action {
       display: flex;
-      justify-content: center;
-
-      gap: 15px;
-
-      flex-wrap: wrap;
-
-      margin-top: 25px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 23px 25px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      background: var(--card);
+      transition: 0.3s ease;
     }
 
-    /* =========================
+    .contact-action:hover {
+      transform: translateX(6px);
+      border-color: rgba(183,255,74,0.3);
+    }
+
+    .contact-action-left strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .contact-action-left span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .contact-arrow {
+      color: var(--accent);
+      font-size: 20px;
+    }
+
+
+    /* =====================================================
        FOOTER
-    ========================= */
+    ===================================================== */
 
     footer {
-      border-top: 1px solid #202631;
-
-      padding: 30px 25px;
-
-      text-align: center;
-
-      color: #737c8b;
-
-      background: #070a10;
-
-      font-size: 13px;
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      background: #080a0f;
     }
 
-    footer span {
-      color: #95e63d;
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
-    /* =========================
-       ANIMATIONS
-    ========================= */
-
-    .fade-in {
-      animation: fadeIn 1s ease forwards;
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 900;
     }
 
-    @keyframes fadeIn {
-
-      from {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
+    .footer-logo span {
+      color: var(--accent);
     }
 
-    /* =========================
+    .footer-text {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+
+    /* =====================================================
+       SCROLL ANIMATION
+    ===================================================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =====================================================
        MOBILE
-    ========================= */
+    ===================================================== */
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero-card {
+        min-height: auto;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-header {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .cta-box {
+        padding: 45px 30px;
+      }
+    }
+
+
+    @media (max-width: 700px) {
+
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .menu-button {
+        display: block;
+      }
 
       .nav-links {
-        display: none;
-
         position: absolute;
-
-        top: 70px;
-        left: 0;
-
-        width: 100%;
-
-        background: #0b0f16;
-
-        padding: 25px;
-
+        top: 78px;
+        left: 14px;
+        right: 14px;
+        padding: 20px;
+        background: rgba(13,16,23,0.98);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        display: none;
         flex-direction: column;
-
-        border-bottom: 1px solid #252d39;
+        align-items: stretch;
+        gap: 5px;
       }
 
       .nav-links.active {
         display: flex;
       }
 
-      .menu-btn {
+      .nav-links a {
         display: block;
+        padding: 13px;
       }
 
-      .hero-container,
-      .about-grid {
-        grid-template-columns: 1fr;
+      .nav-cta {
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(48px, 15vw, 72px);
+        letter-spacing: -3px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
       }
 
       .services-grid {
         grid-template-columns: 1fr;
       }
 
-      .portfolio-grid {
-        grid-template-columns: 1fr;
+      .project-image {
+        height: 250px;
       }
 
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .section-title {
+        letter-spacing: -1.8px;
       }
 
-      .hero-card {
-        max-width: 550px;
-        margin: auto;
-      }
-
-      .project {
-        min-height: auto;
-      }
-
-    }
-
-    @media (max-width: 500px) {
-
-      .hero h1 {
+      .cta-box h2 {
         letter-spacing: -2px;
       }
 
-      .hero p {
-        font-size: 16px;
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
-
-      .skills-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .contact-card {
-        padding: 25px 18px;
-      }
-
-      .project-image {
-        height: 220px;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-
     }
-
   </style>
 </head>
 
+
 <body>
 
-
-  <!-- =========================
+  <!-- =====================================================
        NAVIGATION
-  ========================= -->
+  ===================================================== -->
 
-  <nav>
-
-    <div class="nav-container">
-
-      <a href="#home" class="logo">
-        Allen<span>.</span>
-      </a>
-
-      <button
-        class="menu-btn"
-        onclick="toggleMenu()"
-        aria-label="Open navigation menu"
-      >
-        ☰
-      </button>
-
-      <ul class="nav-links" id="navLinks">
-
-        <li>
-          <a href="#home">Home</a>
-        </li>
-
-        <li>
-          <a href="#about">About</a>
-        </li>
-
-        <li>
-          <a href="#services">Services</a>
-        </li>
-
-        <li>
-          <a href="#portfolio">Portfolio</a>
-        </li>
-
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-
-      </ul>
-
-    </div>
-
-  </nav>
-
-
-  <!-- =========================
-       HERO
-  ========================= -->
-
-  <section class="hero" id="home">
-
-    <div class="hero-container">
-
-      <div class="fade-in">
-
-        <div class="badge">
-          Shopify & Web Design Portfolio
-        </div>
-
-        <h1>
-          Building <span>better</span><br>
-          online experiences.
-        </h1>
-
-        <p>
-          Hi, I'm Allen Mothibedi. I create modern,
-          professional and user-friendly websites and
-          e-commerce experiences designed to help ideas
-          come to life online.
-        </p>
-
-        <div class="buttons">
-
-          <a
-            href="#portfolio"
-            class="btn btn-primary"
-          >
-            View My Work
-          </a>
-
-          <a
-            href="#contact"
-            class="btn btn-outline"
-          >
-            Let's Work Together
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="hero-card">
-
-        <div class="shopify-icon">
-          S
-        </div>
-
-        <h3>
-          Shopify & Web Design
-        </h3>
-
-        <p>
-          Creating clean digital experiences,
-          e-commerce concepts and responsive websites
-          with a focus on usability and presentation.
-        </p>
-
-        <div class="stats">
-
-          <div class="stat">
-            <strong>04</strong>
-            <small>Projects</small>
-          </div>
-
-          <div class="stat">
-            <strong>100%</strong>
-            <small>Responsive</small>
-          </div>
-
-          <div class="stat">
-            <strong>Web</strong>
-            <small>Design</small>
-          </div>
-
-          <div class="stat">
-            <strong>∞</strong>
-            <small>Ideas</small>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       ABOUT
-  ========================= -->
-
-  <section class="about" id="about">
-
+  <header>
     <div class="container">
 
-      <div class="about-grid">
+      <nav>
 
-        <div class="about-text">
+        <a href="#home" class="logo">
+          Allen<span>.</span>
+        </a>
+
+        <button
+          class="menu-button"
+          onclick="toggleMenu()"
+          aria-label="Open navigation menu"
+        >
+          ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+
+          <li>
+            <a href="#home">Home</a>
+          </li>
+
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#services">Services</a>
+          </li>
+
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+
+          <li>
+            <a
+              href="#contact"
+              class="nav-cta"
+            >
+              Hire Me
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-grid">
+
+          <div class="reveal">
+
+            <div class="availability">
+              <span class="availability-dot"></span>
+              Available for new projects
+            </div>
+
+            <h1>
+              I create
+              <span>digital</span>
+              experiences.
+            </h1>
+
+            <p class="hero-text">
+              I'm Allen Mothibedi, a web designer and Shopify specialist
+              focused on creating modern, professional and user-friendly
+              websites that help businesses build a strong online presence.
+            </p>
+
+            <div class="hero-buttons">
+
+              <a
+                href="#projects"
+                class="button button-primary"
+              >
+                View My Work →
+              </a>
+
+              <a
+                href="#contact"
+                class="button button-secondary"
+              >
+                Let's Work Together
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="hero-card reveal">
+
+            <div class="hero-card-top">
+
+              <span class="mini-label">
+                Portfolio
+              </span>
+
+              <span class="card-number">
+                2026
+              </span>
+
+            </div>
+
+            <div class="hero-card-main">
+
+              <h2>
+                Shopify<br>
+                & Web Design
+              </h2>
+
+              <p>
+                Thoughtful design, clean interfaces and responsive
+                experiences built with modern web technologies.
+              </p>
+
+            </div>
+
+            <div class="hero-stats">
+
+              <div class="stat">
+                <strong>04</strong>
+                <span>Projects</span>
+              </div>
+
+              <div class="stat">
+                <strong>100%</strong>
+                <span>Responsive</span>
+              </div>
+
+              <div class="stat">
+                <strong>Web</strong>
+                <span>Design</span>
+              </div>
+
+              <div class="stat">
+                <strong>∞</strong>
+                <span>Ideas</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT
+    ===================================================== -->
+
+    <section class="about" id="about">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="reveal">
+
+            <div class="section-label">
+              About Me
+            </div>
+
+            <h2 class="section-title">
+              Turning ideas into digital experiences.
+            </h2>
+
+          </div>
+
+
+          <div class="about-content reveal">
+
+            <p>
+              I’m Allen Mothibedi, a web designer passionate about creating
+              clean, modern and practical digital experiences.
+            </p>
+
+            <p>
+              My focus is on websites and e-commerce experiences that are
+              easy to navigate, visually appealing and responsive across
+              different screen sizes.
+            </p>
+
+            <p>
+              From Shopify concepts to custom website designs, I enjoy
+              turning ideas into polished online experiences.
+            </p>
+
+            <div class="about-highlight">
+              Good design is not only about how a website looks.
+              It is also about how easily people can use it.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SERVICES
+    ===================================================== -->
+
+    <section id="services">
+
+      <div class="container">
+
+        <div class="reveal">
 
           <div class="section-label">
-            About Me
+            What I Do
           </div>
 
           <h2 class="section-title">
-            Turning ideas into digital experiences.
+            Services built around your digital goals.
+          </h2>
+
+          <p class="section-description">
+            I combine design, usability and modern web technology
+            to create experiences that look professional and work smoothly.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <div class="service-card reveal">
+            <div class="service-number">01</div>
+
+            <h3>Shopify Stores</h3>
+
+            <p>
+              Modern e-commerce storefront concepts designed to present
+              products clearly and create a smooth shopping experience.
+            </p>
+          </div>
+
+
+          <div class="service-card reveal">
+            <div class="service-number">02</div>
+
+            <h3>Web Design</h3>
+
+            <p>
+              Clean and professional website layouts designed around
+              your brand, audience and goals.
+            </p>
+          </div>
+
+
+          <div class="service-card reveal">
+            <div class="service-number">03</div>
+
+            <h3>Responsive Design</h3>
+
+            <p>
+              Websites designed to look and work properly across
+              phones, tablets and desktop screens.
+            </p>
+          </div>
+
+
+          <div class="service-card reveal">
+            <div class="service-number">04</div>
+
+            <h3>E-Commerce</h3>
+
+            <p>
+              Product-focused online store experiences with clear
+              navigation and strong visual presentation.
+            </p>
+          </div>
+
+
+          <div class="service-card reveal">
+            <div class="service-number">05</div>
+
+            <h3>UI Design</h3>
+
+            <p>
+              User interfaces with clear structure, thoughtful spacing
+              and simple interactions.
+            </p>
+          </div>
+
+
+          <div class="service-card reveal">
+            <div class="service-number">06</div>
+
+            <h3>Creative Solutions</h3>
+
+            <p>
+              Custom digital concepts created to bring your ideas
+              from imagination to a professional online experience.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECTS
+    ===================================================== -->
+
+    <section class="projects" id="projects">
+
+      <div class="container">
+
+        <div class="projects-header reveal">
+
+          <div>
+
+            <div class="section-label">
+              Selected Work
+            </div>
+
+            <h2 class="section-title">
+              Projects I've created.
+            </h2>
+
+            <p class="section-description">
+              A selection of e-commerce and web design concepts
+              showcasing different visual styles and digital experiences.
+            </p>
+
+          </div>
+
+          <div class="projects-count">
+            04 Selected Projects
+          </div>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+          <!-- PROJECT 01 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-image">
+
+              <img
+                src="glowbeauty.png"
+                alt="Glow Beauty website project"
+                loading="lazy"
+              >
+
+              <div class="project-overlay"></div>
+
+              <span class="project-tag">
+                E-Commerce
+              </span>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-number">
+                PROJECT 01
+              </div>
+
+              <h3>
+                Glow Beauty
+              </h3>
+
+              <p>
+                A modern skincare and beauty e-commerce experience
+                focused on clean product presentation and simple navigation.
+              </p>
+
+              <a
+                href="https://voluble-blini-5ea216.netlify.app/"
+                class="project-button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Live Website →
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROJECT 02 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-image">
+
+              <img
+                src="homenest.png"
+                alt="HomeNest website project"
+                loading="lazy"
+              >
+
+              <div class="project-overlay"></div>
+
+              <span class="project-tag">
+                Home & Lifestyle
+              </span>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-number">
+                PROJECT 02
+              </div>
+
+              <h3>
+                HomeNest
+              </h3>
+
+              <p>
+                A modern home and lifestyle e-commerce concept designed
+                around beautiful products and a comfortable shopping experience.
+              </p>
+
+              <a
+                href="#contact"
+                class="project-button"
+              >
+                Discuss Project →
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROJECT 03 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-image">
+
+              <img
+                src="techhive.png"
+                alt="TechHive website project"
+                loading="lazy"
+              >
+
+              <div class="project-overlay"></div>
+
+              <span class="project-tag">
+                Technology
+              </span>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-number">
+                PROJECT 03
+              </div>
+
+              <h3>
+                TechHive
+              </h3>
+
+              <p>
+                A sleek technology e-commerce concept designed for
+                electronics, gadgets and modern digital products.
+              </p>
+
+              <a
+                href="#contact"
+                class="project-button"
+              >
+                Discuss Project →
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROJECT 04 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-image">
+
+              <img
+                src="urbanwear.png"
+                alt="UrbanWear website project"
+                loading="lazy"
+              >
+
+              <div class="project-overlay"></div>
+
+              <span class="project-tag">
+                Fashion
+              </span>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-number">
+                PROJECT 04
+              </div>
+
+              <h3>
+                UrbanWear
+              </h3>
+
+              <p>
+                A contemporary fashion e-commerce concept created
+                around modern streetwear and strong product presentation.
+              </p>
+
+              <a
+                href="#contact"
+                class="project-button"
+              >
+                Discuss Project →
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SKILLS
+    ===================================================== -->
+
+    <section id="skills">
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="section-label">
+            Skills
+          </div>
+
+          <h2 class="section-title">
+            Tools and skills I bring to the table.
+          </h2>
+
+          <p class="section-description">
+            A growing toolkit focused on creating modern,
+            responsive and user-friendly websites.
+          </p>
+
+        </div>
+
+
+        <div class="skills-grid reveal">
+
+          <span class="skill">Shopify</span>
+
+          <span class="skill">HTML</span>
+
+          <span class="skill">CSS</span>
+
+          <span class="skill">JavaScript</span>
+
+          <span class="skill">Responsive Design</span>
+
+          <span class="skill">E-Commerce</span>
+
+          <span class="skill">Web Design</span>
+
+          <span class="skill">UI Design</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CALL TO ACTION
+    ===================================================== -->
+
+    <section class="cta">
+
+      <div class="container">
+
+        <div class="cta-box reveal">
+
+          <h2>
+            Have an idea?
+            Let's build it.
           </h2>
 
           <p>
-            I'm Allen Mothibedi, a creative professional
-            interested in Shopify, e-commerce and modern
-            web experiences.
-          </p>
-
-          <p>
-            I enjoy creating websites that look professional,
-            work across different devices and provide visitors
-            with a clear and simple experience.
-          </p>
-
-          <p>
-            This portfolio showcases selected projects,
-            digital concepts and the skills I'm developing
-            as a web designer.
-          </p>
-
-        </div>
-
-
-        <div class="about-box">
-
-          <h3>
-            What I Focus On
-          </h3>
-
-          <div class="check">
-            <span>✓</span>
-            <div>Clean and modern website design</div>
-          </div>
-
-          <div class="check">
-            <span>✓</span>
-            <div>Mobile-friendly experiences</div>
-          </div>
-
-          <div class="check">
-            <span>✓</span>
-            <div>E-commerce store presentation</div>
-          </div>
-
-          <div class="check">
-            <span>✓</span>
-            <div>User-friendly navigation</div>
-          </div>
-
-          <div class="check">
-            <span>✓</span>
-            <div>Professional online branding</div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       SERVICES
-  ========================= -->
-
-  <section id="services">
-
-    <div class="container">
-
-      <div class="section-label">
-        Services
-      </div>
-
-      <h2 class="section-title">
-        What I Can Help With
-      </h2>
-
-      <p class="section-description">
-        Digital services focused on creating professional,
-        simple and effective online experiences.
-      </p>
-
-
-      <div class="services-grid">
-
-
-        <div class="service">
-
-          <div class="service-icon">
-            🛍️
-          </div>
-
-          <h3>
-            Shopify Stores
-          </h3>
-
-          <p>
-            Professional Shopify store layouts designed
-            to present products clearly and create a
-            smooth customer journey.
-          </p>
-
-        </div>
-
-
-        <div class="service">
-
-          <div class="service-icon">
-            🎨
-          </div>
-
-          <h3>
-            Web Design
-          </h3>
-
-          <p>
-            Modern website layouts with clean visual
-            design, responsive layouts and easy navigation.
-          </p>
-
-        </div>
-
-
-        <div class="service">
-
-          <div class="service-icon">
-            📱
-          </div>
-
-          <h3>
-            Mobile Design
-          </h3>
-
-          <p>
-            Websites designed to work across phones,
-            tablets and desktop screens.
-          </p>
-
-        </div>
-
-
-        <div class="service">
-
-          <div class="service-icon">
-            🚀
-          </div>
-
-          <h3>
-            Store Optimization
-          </h3>
-
-          <p>
-            Improving the presentation, structure and
-            usability of online store concepts.
-          </p>
-
-        </div>
-
-
-        <div class="service">
-
-          <div class="service-icon">
-            💡
-          </div>
-
-          <h3>
-            Creative Solutions
-          </h3>
-
-          <p>
-            Digital ideas and website concepts for
-            entrepreneurs, businesses and personal projects.
-          </p>
-
-        </div>
-
-
-        <div class="service">
-
-          <div class="service-icon">
-            🤝
-          </div>
-
-          <h3>
-            Client Support
-          </h3>
-
-          <p>
-            Clear communication and practical solutions
-            throughout a digital project.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       PORTFOLIO
-  ========================= -->
-
-  <section class="portfolio" id="portfolio">
-
-    <div class="container">
-
-      <div class="section-label">
-        Portfolio
-      </div>
-
-      <h2 class="section-title">
-        Selected Projects
-      </h2>
-
-      <p class="section-description">
-        A selection of e-commerce and web design concepts.
-        More projects can be added as the portfolio grows.
-      </p>
-
-
-      <div class="portfolio-grid">
-
-
-        <!-- =========================
-             PROJECT 01 - GLOW BEAUTY
-        ========================= -->
-
-        <div class="project">
-
-          <div class="project-image">
-
-            <img
-              src="glowbeauty.png"
-              alt="Glow Beauty e-commerce website"
-            >
-
-          </div>
-
-          <div class="project-number">
-            PROJECT 01
-          </div>
-
-          <h3>
-            Glow Beauty
-          </h3>
-
-          <p>
-            A modern skincare and beauty e-commerce website
-            featuring product presentation, shopping bag,
-            quantity controls, checkout demonstration,
-            newsletter and responsive design.
-          </p>
-
-          <a
-            href="https://voluble-blini-5ea216.netlify.app/"
-            class="project-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Live Website →
-          </a>
-
-        </div>
-
-
-        <!-- =========================
-             PROJECT 02 - HOMENEST
-        ========================= -->
-
-        <div class="project">
-
-          <div class="project-image">
-
-            <img
-              src="homenest.png"
-              alt="HomeNest e-commerce website concept"
-            >
-
-          </div>
-
-          <div class="project-number">
-            PROJECT 02
-          </div>
-
-          <h3>
-            HomeNest
-          </h3>
-
-          <p>
-            An elegant home and lifestyle e-commerce concept
-            designed around simple browsing, clean product
-            presentation and customer-friendly navigation.
+            Whether you need a website, an e-commerce concept,
+            or a fresh digital experience, let's turn your idea
+            into something professional and useful.
           </p>
 
           <a
             href="#contact"
-            class="project-button"
+            class="button button-primary"
           >
-            Discuss Project →
+            Start a Conversation →
           </a>
 
         </div>
 
+      </div>
 
-        <!-- =========================
-             PROJECT 03 - TECHHIVE
-        ========================= -->
+    </section>
 
-        <div class="project">
 
-          <div class="project-image">
 
-            <img
-              src="techhive.png"
-              alt="TechHive e-commerce website concept"
+    <!-- =====================================================
+         CONTACT
+    ===================================================== -->
+
+    <section class="contact" id="contact">
+
+      <div class="container">
+
+        <div class="contact-grid">
+
+          <div class="contact-info reveal">
+
+            <div class="section-label">
+              Contact
+            </div>
+
+            <h2 class="section-title">
+              Let's create something great.
+            </h2>
+
+            <p>
+              Interested in working together?
+              Get in touch and let's talk about your next project.
+            </p>
+
+
+            <div class="contact-details">
+
+              <div class="contact-item">
+
+                <small>Name</small>
+
+                <span>
+                  Allen Mothibedi
+                </span>
+
+              </div>
+
+
+              <div class="contact-item">
+
+                <small>Email</small>
+
+                <a href="mailto:allenmothibedi46@gmail.com">
+                  allenmothibedi46@gmail.com
+                </a>
+
+              </div>
+
+
+              <div class="contact-item">
+
+                <small>WhatsApp</small>
+
+                <a
+                  href="https://wa.me/26776473286"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  +267 76 473 286
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="contact-actions reveal">
+
+            <a
+              href="mailto:allenmothibedi46@gmail.com"
+              class="contact-action"
             >
 
-          </div>
+              <div class="contact-action-left">
 
-          <div class="project-number">
-            PROJECT 03
-          </div>
+                <strong>
+                  Send me an email
+                </strong>
 
-          <h3>
-            TechHive
-          </h3>
+                <span>
+                  Start a project conversation
+                </span>
 
-          <p>
-            A modern technology store concept focused on
-            clear product presentation, organized navigation
-            and a streamlined shopping experience.
-          </p>
+              </div>
 
-          <a
-            href="#contact"
-            class="project-button"
-          >
-            Discuss Project →
-          </a>
+              <div class="contact-arrow">
+                →
+              </div>
 
-        </div>
+            </a>
 
 
-        <!-- =========================
-             PROJECT 04 - URBANWEAR
-        ========================= -->
-
-        <div class="project">
-
-          <div class="project-image">
-
-            <img
-              src="urbanwear.png"
-              alt="UrbanWear fashion e-commerce website concept"
+            <a
+              href="https://wa.me/26776473286"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-action"
             >
 
+              <div class="contact-action-left">
+
+                <strong>
+                  Message me on WhatsApp
+                </strong>
+
+                <span>
+                  Let's discuss your idea
+                </span>
+
+              </div>
+
+              <div class="contact-arrow">
+                →
+              </div>
+
+            </a>
+
+
+            <a
+              href="#projects"
+              class="contact-action"
+            >
+
+              <div class="contact-action-left">
+
+                <strong>
+                  Explore my projects
+                </strong>
+
+                <span>
+                  View my selected work
+                </span>
+
+              </div>
+
+              <div class="contact-arrow">
+                →
+              </div>
+
+            </a>
+
           </div>
 
-          <div class="project-number">
-            PROJECT 04
-          </div>
-
-          <h3>
-            UrbanWear
-          </h3>
-
-          <p>
-            A contemporary fashion e-commerce concept built
-            around strong visuals, product presentation and
-            straightforward customer navigation.
-          </p>
-
-          <a
-            href="#contact"
-            class="project-button"
-          >
-            Discuss Project →
-          </a>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       SKILLS
-  ========================= -->
-
-  <section id="skills">
-
-    <div class="container">
-
-      <div class="section-label">
-        Skills
-      </div>
-
-      <h2 class="section-title">
-        My Digital Toolkit
-      </h2>
-
-      <p class="section-description">
-        Technologies and areas I work with while creating
-        modern digital experiences.
-      </p>
-
-
-      <div class="skills-grid">
-
-        <div class="skill">
-          Shopify
-        </div>
-
-        <div class="skill">
-          HTML
-        </div>
-
-        <div class="skill">
-          CSS
-        </div>
-
-        <div class="skill">
-          JavaScript
-        </div>
-
-        <div class="skill">
-          Responsive Design
-        </div>
-
-        <div class="skill">
-          E-Commerce
-        </div>
-
-        <div class="skill">
-          Web Design
-        </div>
-
-        <div class="skill">
-          UI Design
         </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
-
-
-  <!-- =========================
-       CONTACT
-  ========================= -->
-
-  <section class="contact" id="contact">
-
-    <div class="container">
-
-      <div class="section-label">
-        Contact
-      </div>
-
-      <h2 class="section-title">
-        Have a project in mind?
-      </h2>
-
-      <p class="section-description">
-        Let's discuss your idea and explore how we can
-        turn it into a professional online experience.
-      </p>
+  </main>
 
 
-      <div class="contact-card">
 
-        <h3>
-          Allen Mothibedi
-        </h3>
-
-        <p style="color:#929aa8; margin-top:5px;">
-          Shopify & Web Design
-        </p>
-
-        <a
-          href="mailto:allenmothibedi46@gmail.com"
-          class="contact-email"
-        >
-          allenmothibedi46@gmail.com
-        </a>
-
-
-        <div class="contact-links">
-
-          <a
-            href="mailto:allenmothibedi46@gmail.com"
-            class="btn btn-primary"
-          >
-            Email Me
-          </a>
-
-          <a
-            href="https://wa.me/26776473286"
-            class="btn btn-outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp Me
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
+  <!-- =====================================================
        FOOTER
-  ========================= -->
+  ===================================================== -->
 
   <footer>
 
-    <p>
-      © 2026
-      <span>Allen Mothibedi</span>.
-      All rights reserved.
-    </p>
+    <div class="container">
 
-    <p style="margin-top:5px;">
-      Shopify & Web Design Portfolio
-    </p>
+      <div class="footer-inner">
+
+        <div class="footer-logo">
+          Allen<span>.</span>
+        </div>
+
+        <div class="footer-text">
+          © 2026 Allen Mothibedi. All rights reserved.
+        </div>
+
+        <div class="footer-text">
+          Shopify & Web Design
+        </div>
+
+      </div>
+
+    </div>
 
   </footer>
 
 
-  <!-- =========================
+
+  <!-- =====================================================
        JAVASCRIPT
-  ========================= -->
+  ===================================================== -->
 
   <script>
 
+    /* MOBILE MENU */
+
     function toggleMenu() {
 
-      const menu = document.getElementById("navLinks");
+      const menu =
+        document.getElementById("navLinks");
 
       menu.classList.toggle("active");
 
     }
 
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    /* CLOSE MOBILE MENU AFTER CLICK */
 
-      link.addEventListener("click", function() {
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function(link) {
 
-        document
-          .getElementById("navLinks")
-          .classList.remove("active");
+        link.addEventListener("click", function() {
+
+          document
+            .getElementById("navLinks")
+            .classList.remove("active");
+
+        });
 
       });
+
+
+    /* SCROLL REVEAL */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const observer =
+      new IntersectionObserver(
+        function(entries) {
+
+          entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("show");
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach(function(element) {
+
+      observer.observe(element);
 
     });
 
